@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {addCategoryApi} from "./duck/actions";
 
 class CategoryFeature extends React.Component {
 
@@ -9,7 +10,7 @@ class CategoryFeature extends React.Component {
 
     getChildrenProps = () => {
         return {
-
+            onAddCategory: this.props.addCategoryApi
         };
     }
 }
@@ -18,4 +19,4 @@ const mapStateToProps = (state) => ({
 
 });
 
-export default connect(mapStateToProps, {})(CategoryFeature);
+export default connect(mapStateToProps, {addCategoryApi})(CategoryFeature);

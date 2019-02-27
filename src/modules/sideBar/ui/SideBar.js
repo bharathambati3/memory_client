@@ -28,13 +28,13 @@ const styles = {
 
 const SideBar = props => {
 
-    const { items, classes, onMenuClick, showSideBar } = props;
+    const { items, classes, onMenuClick, showSideBar, onItemClick } = props;
 
     const sideList = (
         <div className={classes.list}>
             <List>
                 {items.map((item, index) => (
-                    <ListItem button key={item.name}>
+                    <ListItem button key={item.name} onClick={() => onItemClick(item)}>
                         <ListItemIcon>{getIcon(item.icon)}</ListItemIcon>
                         <ListItemText primary={item.name} />
                     </ListItem>

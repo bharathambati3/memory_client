@@ -5,6 +5,7 @@ import {actionSplitterMiddleware} from "./middleware/core/actionSplitterMDL";
 import {STORE_STATE} from "../constants/constants";
 import {get, set} from '../utils/storage';
 import {setDataReducer} from "./reducers/setDataReducer";
+import {routingMDL} from "./middleware/core/routingMDL";
 
 // shape the state structure
 const rootReducer = combineReducers({
@@ -19,7 +20,8 @@ const featureMiddleware = [
 const coreMiddleware = [
     actionSplitterMiddleware,
     apiMiddleware,
-    loggerMiddleware
+    loggerMiddleware,
+    routingMDL
 ];
 
 // compose the middleware with additional (optional) enhancers,

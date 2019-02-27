@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {setData} from "../../../lib/redux/actions/manageData";
 import {extractor} from "../../../lib/utils/util";
 import {KEY_SHOW_SIDEBAR} from "../../../lib/constants/keys";
+import {SIDEBAR_TOGGLE_ACTION} from "../../../lib/constants/actionIds";
 
 class TopBarFeature extends React.Component {
 
@@ -12,14 +13,16 @@ class TopBarFeature extends React.Component {
 
     getChildrenProps = () => {
         return {
-            onMenuClick: this.onMenuClick
+            onMenuClick: this.onMenuClick,
+            showSideBar: this.props.showSideBar
         }
     }
 
     onMenuClick = () => {
         const obj  = {
             key: KEY_SHOW_SIDEBAR,
-            value: !this.props.showSideBar
+            value: !this.props.showSideBar,
+            feature: SIDEBAR_TOGGLE_ACTION
         };
         this.props.setData(obj);
     }

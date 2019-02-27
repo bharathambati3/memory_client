@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
+import UI from './modules';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        inside app.
-      </div>
+        <UI/>
     );
   }
 }

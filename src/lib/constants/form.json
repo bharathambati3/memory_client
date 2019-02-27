@@ -1,0 +1,36 @@
+{
+  "addCategory": [
+    {
+      "name": "name",
+      "value": "",
+      "type": "Text",
+      "props": {
+        "label": "Category name",
+        "fullWidth": true
+      },
+      "validations": [
+        {
+          "method": "isEmpty",
+          "validWhen": false,
+          "errorMsg": "Please enter category name."
+        }
+      ]
+    },
+    {
+      "name": "description",
+      "value": "",
+      "type": "Text",
+      "props": {
+        "label": "Category description",
+        "fullWidth": true
+      },
+      "validations": [
+        {
+          "method": "isEmpty",
+          "validWhen": false,
+          "errorMsg": "Please enter category description."
+        }
+      ]
+    }
+  ]
+}

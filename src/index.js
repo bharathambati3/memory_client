@@ -4,11 +4,15 @@ import {Provider} from 'react-redux'
 import store from './lib/redux/store';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Router } from 'react-router-dom';
+import { history } from './lib/router/';
 
 ReactDOM.render
 (
     <Provider store={store}>
-        <App />
+        <Router history={history}>
+            <App />
+        </Router>
     </Provider>,
     document.getElementById('root')
 );

@@ -6,10 +6,12 @@ import {STORE_STATE} from "../constants/constants";
 import {get, set} from '../utils/storage';
 import {setDataReducer} from "./reducers/setDataReducer";
 import {routingMDL} from "./middleware/core/routingMDL";
+import notificationReducer from '../notifications/feature/duck/reducer';
 
 // shape the state structure
 const rootReducer = combineReducers({
-    content: setDataReducer
+    content: setDataReducer,
+    nfs: notificationReducer
 });
 
 // create the feature middleware array

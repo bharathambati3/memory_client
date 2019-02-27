@@ -5,7 +5,9 @@ export const extractor = (data, key) => {
 
     let resp = data['content'];
     for(const key of arr) {
-        resp = resp[key];
+        if (resp) {
+            resp = resp[key];
+        }
     }
     return resp;
 };

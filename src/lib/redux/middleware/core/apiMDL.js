@@ -1,15 +1,28 @@
-import {API_REQUEST, apiError, apiSuccess} from "../../actions/api";
+import {API_REQUEST} from "../../actions/api";
 import {BASE_URL} from "../../../constants/NetworkConstants";
+import {KEY_LOADING} from "../../../constants/keys";
+import {setData} from "../../actions/manageData";
 
 export const apiMiddleware = ({dispatch}) => (next) => (action) => {
     next(action);
 
     if (action.type.includes(API_REQUEST)) {
-        const {body, url, method, feature} = action.meta;
 
+        const {body, url, method, feature, success, error} = action.payload;
+        dispatch(setData({key: KEY_LOADING, value: true, feature: 'api loading started'}));
         fetch(BASE_URL + url, {body, method})
             .then(response => response.json())
-            .then(response => dispatch(apiSuccess({response, feature})))
-            .catch(error => dispatch(apiError({error: error, feature})))
+            .then(response => {
+                dispatch(setData({key: KEY_LOADING, value: false, feature: 'api loading ended:success'}));
+                if (success) {
+                    dispatch(success({response, feature}))
+                }
+            })
+            .catch(errMsg => {
+                dispatch(setData({key: KEY_LOADING, value: false, feature: 'api loading ended:error'}));
+                if (error) {
+                    dispatch(error(errMsg.message))
+                }
+            })
     }
 };

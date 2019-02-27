@@ -6,12 +6,15 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Router } from 'react-router-dom';
 import { history } from './lib/router/';
+import NotificationScreen from "./lib/notifications/ui/NotificationScreen/NotificationScreen";
 
 ReactDOM.render
 (
     <Provider store={store}>
         <Router history={history}>
-            <App />
+            <NotificationScreen>
+                <App />
+            </NotificationScreen>
         </Router>
     </Provider>,
     document.getElementById('root')

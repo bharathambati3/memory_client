@@ -46,7 +46,8 @@ const SideBar = props => {
                         <Collapse in={item.show}>
                             <List component="div" disablePadding>
                                 {item.subItems.map((subI, index) => (
-                                    <ListItem button key={subI.name} onClick={() => subI.click(subI)} className={classes.nested}>
+                                    <ListItem selected={subI.selected} button key={subI.name}
+                                              onClick={() => subI.click(subI)} className={classes.nested}>
                                         <ListItemIcon>{getIcon(subI.icon)}</ListItemIcon>
                                         <ListItemText primary={subI.name} />
                                     </ListItem>

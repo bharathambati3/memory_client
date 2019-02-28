@@ -6,7 +6,7 @@ import {
 } from "../../../lib/constants/iconConstants";
 import {ROUTE_CATEGORIES, ROUTE_MEMORY, ROUTE_TOPICS} from "../../../lib/constants/RouteConstants";
 import {routeAction} from "../../../lib/redux/actions/historyAction";
-import {KEY_SHOW_SIDEBAR, KEY_SIDEBAR_SELECTED} from "../../../lib/constants/keys";
+import {KEY_SHOW_SIDEBAR, KEY_SIDEBAR_SELECTED, KEY_SIDEBAR_SUB_SELECTED} from "../../../lib/constants/keys";
 import {extractor} from "../../../lib/utils/util";
 import {setData} from "../../../lib/redux/actions/manageData";
 
@@ -24,38 +24,57 @@ class SideBarFeature extends React.Component {
     }
 
     onItemClick = (item) => {
+        if (this.props.mainItem) {
+            return this.props.setData({
+                key: KEY_SIDEBAR_SELECTED,
+                value: item.name
+            })
+        }
         this.props.setData({
             key: KEY_SIDEBAR_SELECTED,
-            value: item
+            value: item.name
         });
     }
 
     /**
      * Sub item click
      */
-    siClick = (si) => {
+    siClick = (subItem) => {
         this.props.setData({
             key: KEY_SHOW_SIDEBAR,
             value: false
-        })
-        this.props.routeAction(si);
+        });
+        this.props.setData({
+            key: KEY_SIDEBAR_SUB_SELECTED,
+            value: subItem.name
+        });
+        this.props.routeAction(subItem);
+    }
+
+    /**
+     * create sub item
+     */
+    csi = (name, icon, url) => {
+        const click = this.siClick;
+        const selected = ((this.props.subItem) && (this.props.subItem === name));
+        return {name, icon, url, click, selected};
     }
 
     getSubItems = (name, url) => {
         switch (name) {
             default:
                 return [
-                    {name: 'create', icon: MENU_CREATE, url: url+'/create', click: this.siClick},
-                    {name: 'list', icon: MENU_LIST, url: url+'/list', click: this.siClick},
-                    {name: 'update', icon: MENU_UPDATE, url: url+'/update', click: this.siClick},
-                    {name: 'delete', icon: MENU_DELETE, url: url+'/delete', click: this.siClick},
+                    this.csi('create', MENU_CREATE, url+'/create'),
+                    this.csi('list', MENU_LIST, url+'/list'),
+                    this.csi('update', MENU_UPDATE, url+'/update'),
+                    this.csi('delete', MENU_DELETE, url+'/delete'),
                 ]
         }
     }
 
     mi = (name, icon, url) => {
         const subItems = this.getSubItems(name, url);
-        const show =  ((this.props.selectedItem) && this.props.selectedItem.name === name);
+        const show =  ((this.props.mainItem) && this.props.mainItem === name);
         return {name, icon, url, subItems, show}
     }
 
@@ -69,7 +88,8 @@ class SideBarFeature extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    selectedItem: extractor(state, KEY_SIDEBAR_SELECTED)
+    mainItem: extractor(state, KEY_SIDEBAR_SELECTED),
+    subItem: extractor(state, KEY_SIDEBAR_SUB_SELECTED)
 });
 
 export default connect(mapStateToProps, {setData, routeAction})(SideBarFeature);

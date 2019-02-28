@@ -2,6 +2,7 @@ import React from "react";
 import Drawer from "@material-ui/core/Drawer";
 import {withStyles} from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
+import Collapse from "@material-ui/core/Collapse";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -10,7 +11,7 @@ import MailIcon from "@material-ui/icons/Mail";
 import {getIcon} from "../../../lib/icons/factory";
 
 
-const styles = {
+const styles = theme => ({
     list: {
         width: 250,
     },
@@ -24,7 +25,10 @@ const styles = {
         marginLeft: -12,
         marginRight: 20,
     },
-};
+    nested: {
+        paddingLeft: theme.spacing.unit * 4,
+    },
+});
 
 const SideBar = props => {
 
@@ -34,10 +38,24 @@ const SideBar = props => {
         <div className={classes.list}>
             <List>
                 {items.map((item, index) => (
-                    <ListItem button key={item.name} onClick={() => onItemClick(item)}>
-                        <ListItemIcon>{getIcon(item.icon)}</ListItemIcon>
-                        <ListItemText primary={item.name} />
-                    </ListItem>
+                    <div>
+                        <ListItem button key={item.name} onClick={() => onItemClick(item)}>
+                            <ListItemIcon>{getIcon(item.icon)}</ListItemIcon>
+                            <ListItemText primary={item.name} />
+                        </ListItem>
+                        <Collapse in={item.show}>
+                            <List component="div" disablePadding>
+                                {item.subItems.map((subI, index) => (
+                                    <ListItem button key={subI.name} onClick={() => subI.click(subI)} className={classes.nested}>
+                                        <ListItemIcon>{getIcon(subI.icon)}</ListItemIcon>
+                                        <ListItemText primary={subI.name} />
+                                    </ListItem>
+
+                                ))}
+                            </List>
+                        </Collapse>
+
+                    </div>
                 ))}
             </List>
         </div>
@@ -48,8 +66,6 @@ const SideBar = props => {
             <div
                 tabIndex={0}
                 role="button"
-                onClick={onMenuClick}
-                onKeyDown={onMenuClick}
             >
                 {sideList}
             </div>

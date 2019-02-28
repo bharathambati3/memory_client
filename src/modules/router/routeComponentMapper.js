@@ -8,17 +8,17 @@ import MemoryUI from "../memory/index";
 const routes = [
     {
         component: <Topics />,
-        exact: true,
+        exact: false,
         path: ROUTE_TOPICS
     },
     {
         component: <CategoryUI />,
-        exact: true,
+        exact: false,
         path: ROUTE_CATEGORIES
     },
     {
         component: <MemoryUI />,
-        exact: true,
+        exact: false,
         path: ROUTE_MEMORY
     }
 ]

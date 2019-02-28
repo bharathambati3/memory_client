@@ -28,7 +28,6 @@ class Notification extends React.Component {
     });
 
     return children({
-      ...this.props.notifications,
       loading: this.props.loading
     });
   }

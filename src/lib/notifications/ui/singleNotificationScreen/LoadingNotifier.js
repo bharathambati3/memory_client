@@ -1,16 +1,23 @@
-import * as React from 'react';
+import React from 'react';
+import Notification from "../../feature/NotificationsFeature/Notification";
 import Spinner from '../../../spinner';
 
-class LoadingNotifier extends React.Component {
-  render() {
-    const {loading} = this.props;
-
+const LoadingNotifier = () => {
     return (
-      <React.Fragment>
-        <Spinner open={loading} />
-      </React.Fragment>
+        <React.Fragment>
+          <Notification>
+              {({
+                    loading,
+                }) => {
+                  return (
+                      <Spinner open={loading} />
+                  );
+              }}
+          </Notification>
+
+        </React.Fragment>
     );
-  }
-}
+};
 
 export default LoadingNotifier;
+

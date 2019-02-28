@@ -16,4 +16,4 @@ export const apiSuccess = ({response, feature}) => ({
   meta: {feature}
 });
 
-export const simpleError = (e) => (notify(e));
+export const simpleError = (e) => (notify(e, 'error'));

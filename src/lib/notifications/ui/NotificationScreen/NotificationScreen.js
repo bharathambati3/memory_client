@@ -38,19 +38,7 @@ class NotificationsScreen extends React.Component {
         }
       >
         <React.Fragment>
-          <Notification>
-            {({
-              loading,
-              notification,
-            }) => {
-              return (
-                <LoadingNotifier
-                  loading={loading}
-                  notification={notification}
-                />
-              );
-            }}
-          </Notification>
+          <LoadingNotifier/>
           {this.props.children}
         </React.Fragment>
       </SnackbarProvider>

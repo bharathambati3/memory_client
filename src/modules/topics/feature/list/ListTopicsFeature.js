@@ -1,18 +1,23 @@
 import React from "react";
 import {connect} from "react-redux";
 import {deleteTopicsApi, listTopicsApi} from "../duck/actions";
-import {KEY_LIST_TOPICS} from "../../../../lib/constants/keys";
+import {KEY_HEADER, KEY_LIST_TOPICS} from "../../../../lib/constants/keys";
 import {dateFormatter, extractor} from "../../../../lib/utils/util";
 import {createTableActions} from "../../../../lib/table/index";
 import {MENU_DELETE, MENU_FISH_EYE} from "../../../../lib/constants/iconConstants";
 import {ROUTE_TOPICS_CREATE} from "../../../../lib/constants/RouteConstants";
 import {routeAction} from "../../../../lib/redux/actions/historyAction";
+import {setData} from "../../../../lib/redux/actions/manageData";
 
 class ListTopicsFeature extends React.Component {
 
 
     componentDidMount() {
         this.props.listTopicsApi();
+        this.props.setData({
+            key: KEY_HEADER,
+            value: "List Topics"
+        })
     }
 
 
@@ -76,4 +81,4 @@ const mapStateToProps = (state) => ({
     topics: extractor(state, KEY_LIST_TOPICS)
 });
 
-export default connect(mapStateToProps, {routeAction, listTopicsApi, deleteTopicsApi})(ListTopicsFeature);
+export default connect(mapStateToProps, {setData, routeAction, listTopicsApi, deleteTopicsApi})(ListTopicsFeature);

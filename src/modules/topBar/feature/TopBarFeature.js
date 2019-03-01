@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {setData} from "../../../lib/redux/actions/manageData";
 import {extractor} from "../../../lib/utils/util";
-import {KEY_SHOW_SIDEBAR} from "../../../lib/constants/keys";
+import {KEY_HEADER, KEY_SHOW_SIDEBAR} from "../../../lib/constants/keys";
 import {SIDEBAR_TOGGLE_ACTION} from "../../../lib/constants/actionIds";
 
 class TopBarFeature extends React.Component {
@@ -13,6 +13,7 @@ class TopBarFeature extends React.Component {
 
     getChildrenProps = () => {
         return {
+            header: this.props.header,
             onMenuClick: this.onMenuClick,
             showSideBar: this.props.showSideBar
         }
@@ -29,6 +30,7 @@ class TopBarFeature extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
+    header: extractor(state, KEY_HEADER),
     showSideBar: extractor(state, KEY_SHOW_SIDEBAR)
 });
 

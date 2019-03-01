@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {createTopicApi} from "../duck/actions";
 import {extractor} from "../../../../lib/utils/util";
-import {KEY_LIST_CATEGORIES} from "../../../../lib/constants/keys";
+import {KEY_HEADER, KEY_LIST_CATEGORIES} from "../../../../lib/constants/keys";
 import {listCategoryApi} from "../../../category/feature/duck/actions";
+import {setData} from "../../../../lib/redux/actions/manageData";
 
 class CreateTopicsFeature extends React.Component {
 
@@ -11,6 +12,10 @@ class CreateTopicsFeature extends React.Component {
         if (! this.props.categories) {
             this.props.listCategoryApi();
         }
+        this.props.setData({
+            key: KEY_HEADER,
+            value: "Create Topic"
+        })
     }
 
 
@@ -38,4 +43,4 @@ const mapStateToProps = (state) => ({
     categories: extractor(state, KEY_LIST_CATEGORIES)
 });
 
-export default connect(mapStateToProps, {createTopicApi, listCategoryApi})(CreateTopicsFeature);
+export default connect(mapStateToProps, {setData, createTopicApi, listCategoryApi})(CreateTopicsFeature);

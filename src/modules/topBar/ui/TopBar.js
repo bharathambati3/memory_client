@@ -27,7 +27,7 @@ const styles = {
 };
 
 function TopBar(props) {
-    const { classes, onMenuClick } = props;
+    const { classes, onMenuClick, header } = props;
 
     return (
         <div className={classes.root}>
@@ -43,7 +43,7 @@ function TopBar(props) {
                     </IconButton>
 
                     <Typography variant="h6" color="inherit" className={classes.grow}>
-                        Memories
+                        {header}
                     </Typography>
 
                     <Button color="inherit">Profile</Button>

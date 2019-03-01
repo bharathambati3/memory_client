@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import TopBar from "./topBar";
 import BottomBar from "./bottomBar/BottomBar";
 import RouteComponentMapper from "./router/routeComponentMapper";
-import Topics from "./topics/ui/Topics";
+import Topics from "./topics";
 import {ROUTE_CATEGORIES, ROUTE_MEMORY, ROUTE_TOPICS} from "../lib/constants/RouteConstants";
 import CategoryUI from "./category/index";
 import MemoryUI from "./memory/index";

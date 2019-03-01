@@ -1,11 +1,12 @@
 import React from 'react';
 import CreateTopicsFeature from '../../feature/create/CreateTopicsFeature';
+import {createForm} from "../../../../lib/forms/index";
 
 const Topics = props => {
     return (
         <CreateTopicsFeature>
             {
-                (props) => <div>inside topics ui</div>
+                (props) => <div>{createForm("addTopic", props.onSubmit)}</div>
             }
         </CreateTopicsFeature>
     );

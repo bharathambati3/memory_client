@@ -32,5 +32,39 @@
         }
       ]
     }
+  ],
+  "addTopic": [
+    {
+      "name": "name",
+      "value": "",
+      "type": "Text",
+      "props": {
+        "label": "Topic name",
+        "fullWidth": true
+      },
+      "validations": [
+        {
+          "method": "isEmpty",
+          "validWhen": false,
+          "errorMsg": "Please enter topic name."
+        }
+      ]
+    },
+    {
+      "name": "description",
+      "value": "",
+      "type": "Text",
+      "props": {
+        "label": "Topic description",
+        "fullWidth": true
+      },
+      "validations": [
+        {
+          "method": "isEmpty",
+          "validWhen": false,
+          "errorMsg": "Please enter topic description."
+        }
+      ]
+    }
   ]
 }

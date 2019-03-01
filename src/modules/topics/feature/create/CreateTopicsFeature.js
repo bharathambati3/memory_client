@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {createTopic} from "./duck/actions";
 
 class CreateTopicsFeature extends React.Component {
 
@@ -9,7 +10,7 @@ class CreateTopicsFeature extends React.Component {
 
     getChildrenProps = () => {
         return {
-
+            onSubmit: this.props.createTopic
         };
     }
 }
@@ -18,4 +19,4 @@ const mapStateToProps = (state) => ({
 
 });
 
-export default connect(mapStateToProps, {})(CreateTopicsFeature);
+export default connect(mapStateToProps, {createTopic})(CreateTopicsFeature);

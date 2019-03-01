@@ -23,6 +23,7 @@ class ListCategoryFeature extends React.Component {
 
     getChildrenProps = () => {
         return {
+            show: (this.props.list),
             tblMetaData: this.getListMetaInfo(),
             tblData: this.props.list,
             refresh: this.props.listCategoryApi,

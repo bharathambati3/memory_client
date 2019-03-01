@@ -8,14 +8,14 @@ export const apiMiddleware = ({dispatch}) => (next) => (action) => {
 
     if (action.type.includes(API_REQUEST)) {
 
-        const {body, url, method, feature, success, error} = action.payload;
+        const {body, url, method, success, error} = action.payload;
         dispatch(setData({key: KEY_LOADING, value: true, feature: 'api loading started'}));
         fetch(BASE_URL + url, {body, method})
             .then(response => response.json())
             .then(response => {
                 dispatch(setData({key: KEY_LOADING, value: false, feature: 'api loading ended:success'}));
                 if (success) {
-                    dispatch(success({response, feature}))
+                    dispatch(success(response))
                 }
             })
             .catch(errMsg => {

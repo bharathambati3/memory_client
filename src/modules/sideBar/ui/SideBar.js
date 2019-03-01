@@ -38,7 +38,7 @@ const SideBar = props => {
         <div className={classes.list}>
             <List>
                 {items.map((item, index) => (
-                    <div>
+                    <div key={index}>
                         <ListItem button key={item.name} onClick={() => onItemClick(item)}>
                             <ListItemIcon>{getIcon(item.icon)}</ListItemIcon>
                             <ListItemText primary={item.name} />

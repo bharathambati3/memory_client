@@ -6,3 +6,5 @@ export const MENU_CREATE = 'Create';
 export const MENU_LIST = 'List';
 export const MENU_UPDATE = 'Update';
 export const MENU_DELETE = 'Delete';
+export const MENU_VIEW = 'View';
+export const MENU_FISH_EYE = 'MENU_FISH_EYE';

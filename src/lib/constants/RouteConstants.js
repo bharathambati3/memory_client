@@ -1,6 +1,6 @@
 export const ROUTE_CATEGORIES = '/categories';
 export const ROUTE_CATEGORIES_CREATE = '/categories/create';
-export const ROUTE_CATEGORIES_LIST = '/categories/list';
+export const ROUTE_CATEGORIES_LIST = '/categories';
 export const ROUTE_CATEGORIES_UPDATE = '/categories/update';
 export const ROUTE_CATEGORIES_DELETE = '/categories/delete';
 export const ROUTE_TOPICS = '/topics';

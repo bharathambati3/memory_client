@@ -1,39 +1,20 @@
-import React from 'react';
-import {ROUTE_CATEGORIES, ROUTE_MEMORY, ROUTE_TOPICS} from "../../lib/constants/RouteConstants";
-import Topics from '../topics';
-import { Route, Switch } from 'react-router-dom';
-import CategoryUI from "../category";
-import MemoryUI from "../memory/index";
+import React from "react";
+import {Route, Switch} from "react-router-dom";
 
-const routes = [
-    {
-        component: <Topics />,
-        exact: false,
-        path: ROUTE_TOPICS
-    },
-    {
-        component: <CategoryUI />,
-        exact: false,
-        path: ROUTE_CATEGORIES
-    },
-    {
-        component: <MemoryUI />,
-        exact: false,
-        path: ROUTE_MEMORY
-    }
-]
-
-const RouteComponentMapper = () => {
+const RouteComponentMapper = (props) => {
+    const {routes} = props;
     return (
         <React.Fragment>
             <div>
                 <Switch>
                     {routes.map((e, i) => (
                         <Route
+                            {...props}
+                            test="flasdkf"
                             key={i}
                             exact={e.exact}
                             path={e.path}
-                            render={() => (e.component)}
+                            render={() => <e.component {...props.compProps}/>}
                         />
                     ))}
                 </Switch>

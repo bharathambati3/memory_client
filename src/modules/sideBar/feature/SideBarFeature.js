@@ -65,9 +65,7 @@ class SideBarFeature extends React.Component {
             default:
                 return [
                     this.csi('create', MENU_CREATE, url+'/create'),
-                    this.csi('list', MENU_LIST, url+'/list'),
-                    this.csi('update', MENU_UPDATE, url+'/update'),
-                    this.csi('delete', MENU_DELETE, url+'/delete'),
+                    this.csi('list', MENU_LIST, url)
                 ]
         }
     }

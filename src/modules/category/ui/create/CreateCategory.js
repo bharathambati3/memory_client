@@ -4,7 +4,7 @@ import {createForm} from "../../../../lib/forms/index";
 const CreateCategory = props => {
     return (
         <div>
-            {createForm('addCategory', props.onAddCategory)}
+            {createForm({...props.formData})}
         </div>
     );
 };

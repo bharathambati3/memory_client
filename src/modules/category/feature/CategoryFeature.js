@@ -10,11 +10,13 @@ class CategoryFeature extends React.Component {
 
     getChildrenProps = () => {
         return {
-            onAddCategory: this.props.addCategoryApi
+            formData: {
+                dataId: 'addCategory',
+                onSubmit: this.props.addCategoryApi
+            }
         };
     }
 }
-
 const mapStateToProps = (state) => ({
 
 });

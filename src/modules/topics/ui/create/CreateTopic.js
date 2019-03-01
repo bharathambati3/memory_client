@@ -6,7 +6,7 @@ const Topics = props => {
     return (
         <CreateTopicsFeature>
             {
-                (props) => <div>{createForm("addTopic", props.onSubmit)}</div>
+                (props) => <div>{createForm({...props.formData})}</div>
             }
         </CreateTopicsFeature>
     );

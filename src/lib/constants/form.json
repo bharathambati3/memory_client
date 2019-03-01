@@ -65,6 +65,24 @@
           "errorMsg": "Please enter topic description."
         }
       ]
+    },
+    {
+      "name": "category",
+      "value": "",
+      "type": "Select",
+      "dropDownId": "categories",
+      "keepValue": true,
+      "props": {
+        "label": "Topic description",
+        "fullWidth": true
+      },
+      "validations": [
+        {
+          "method": "isEmptyNumber",
+          "validWhen": false,
+          "errorMsg": "Please enter topic description."
+        }
+      ]
     }
   ]
 }

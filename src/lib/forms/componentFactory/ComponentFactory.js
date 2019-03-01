@@ -95,6 +95,8 @@ const componentFactory = (props) => {
         <FormControl fullWidth={fullWidth}>
           <InputLabel> {restRootProps.label} </InputLabel>
           <Select
+            error={isError}
+            helperText={errorMessage}
             name={name}
             autoWidth={true}
             value={value}

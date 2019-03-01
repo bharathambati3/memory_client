@@ -6,7 +6,8 @@ import {notify} from "../../../../../lib/redux/actions/notifications";
 const convert = (req) => {
     const obj = {
         name: req.formContent.name.value,
-        description: req.formContent.description.value
+        description: req.formContent.description.value,
+        categoryId: req.formContent.category.value
     }
 
     return JSON.stringify(obj);

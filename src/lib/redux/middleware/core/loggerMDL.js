@@ -3,7 +3,7 @@ export const loggerMiddleware = ({getState}) => (next) => (action) => {
 
     if (REACT_APP_ENV === 'development') {
 
-        console.group(`${action.type} >> ${action.payload.feature}`);
+        console.group(`${action.type} >> ${(action.payload) ? action.payload.feature : 'no feature defined!!'}`);
 
         console.group('CURRENT STATE:');
         console.log(getState());

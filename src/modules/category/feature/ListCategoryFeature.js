@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {listCategoryApi} from "./duck/actions";
+import {deleteCategoryApi, listCategoryApi} from "./duck/actions";
 import {dateFormatter, extractor} from "../../../lib/utils/util";
 import {KEY_LIST_CATEGORIES} from "../../../lib/constants/keys";
 import {createTableActions} from "../../../lib/table/index";
 import {MENU_DELETE, MENU_FISH_EYE, MENU_VIEW} from "../../../lib/constants/iconConstants";
+import {routeAction} from "../../../lib/redux/actions/historyAction";
+import {ROUTE_CATEGORIES_CREATE} from "../../../lib/constants/RouteConstants";
 
 class ListCategoryFeature extends React.Component {
 
@@ -22,7 +24,11 @@ class ListCategoryFeature extends React.Component {
     getChildrenProps = () => {
         return {
             tblMetaData: this.getListMetaInfo(),
-            tblData: this.props.list
+            tblData: this.props.list,
+            refresh: this.props.listCategoryApi,
+            navToCreateNew: () => this.props.routeAction({
+                url: ROUTE_CATEGORIES_CREATE
+            })
         };
     }
 
@@ -58,7 +64,7 @@ class ListCategoryFeature extends React.Component {
                     },
                     {
                         icon: MENU_DELETE,
-                        cb: () => console.log(item)
+                        cb: () => this.props.deleteCategoryApi(item.id)
                     }
                 ])
             }
@@ -70,4 +76,4 @@ const mapStateToProps = (state) => ({
     list: extractor(state, KEY_LIST_CATEGORIES)
 });
 
-export default connect(mapStateToProps, {listCategoryApi})(ListCategoryFeature);
+export default connect(mapStateToProps, {routeAction, listCategoryApi, deleteCategoryApi})(ListCategoryFeature);

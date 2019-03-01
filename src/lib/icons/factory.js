@@ -8,6 +8,7 @@ import List from "@material-ui/icons/List";
 import Update from "@material-ui/icons/Update";
 import View from "@material-ui/icons/ViewModule";
 import Delete from "@material-ui/icons/Delete";
+import Refresh from "@material-ui/icons/Refresh";
 import FishEye from "@material-ui/icons/RemoveRedEyeSharp";
 import * as ic from "../constants/iconConstants";
 
@@ -21,6 +22,7 @@ const map = {
     [ic.MENU_UPDATE]     :     <Update/>,
     [ic.MENU_DELETE]     :     <Delete/>,
     [ic.MENU_VIEW]     :     <View/>,
+    [ic.MENU_REFRESH]     :     <Refresh/>,
     [ic.MENU_FISH_EYE]     :     <FishEye/>,
 }
 export const getIcon = (name, iconProps = null) => {

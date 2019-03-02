@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-class MemoryFeature extends React.Component {
+class CreateMemoryFeature extends React.Component {
 
     render() {
         return this.props.children(this.getChildrenProps());
@@ -18,4 +18,4 @@ const mapStateToProps = (state) => ({
 
 });
 
-export default connect(mapStateToProps, {})(MemoryFeature);
+export default connect(mapStateToProps, {})(CreateMemoryFeature);

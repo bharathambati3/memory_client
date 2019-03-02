@@ -8,9 +8,9 @@ export const ROUTE_TOPICS_CREATE = '/topics/create';
 export const ROUTE_TOPICS_LIST = '/topics';
 export const ROUTE_TOPICS_UPDATE = '/topics/update';
 export const ROUTE_TOPICS_DELETE = '/topics/delete';
-export const ROUTE_MEMORY = '/memory';
-export const ROUTE_MEMORY_CREATE = '/memory/create';
-export const ROUTE_MEMORY_LIST = '/memory/list';
-export const ROUTE_MEMORY_UPDATE = '/memory/update';
-export const ROUTE_MEMORY_DELETE = '/memory/delete';
+export const ROUTE_MEMORY = '/memories';
+export const ROUTE_MEMORY_CREATE = '/memories/create';
+export const ROUTE_MEMORY_LIST = '/memories';
+export const ROUTE_MEMORY_UPDATE = '/memories/update';
+export const ROUTE_MEMORY_DELETE = '/memories/delete';
 

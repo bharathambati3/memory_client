@@ -1,20 +1,26 @@
-import React, {Component} from 'react';
-import MemoryFeature from "./feature/MemoryFeature";
-import Memory from "./ui/Memory";
+import React, {Component} from "react";
+import {ROUTE_CATEGORIES, ROUTE_MEMORY_CREATE, ROUTE_MEMORY_LIST} from "../../lib/constants/RouteConstants";
+import ListMemory from "./ui/ListMemory";
+import CreateMemory from "./ui/CreateMemory";
+import RouteComponentMapper from "../router/routeComponentMapper";
 
+const routes = [
+    {
+        component: CreateMemory,
+        exact: true,
+        path: ROUTE_MEMORY_CREATE
+    },
+    {
+        component: ListMemory,
+        exact: false,
+        path: ROUTE_MEMORY_LIST
+    }
+]
 
-class MemoryUI extends Component {
+class UI extends Component {
     render() {
-        return (
-            <MemoryFeature>
-                {
-                    (props) => {
-                        return (<Memory {...props}/>);
-                    }
-                }
-            </MemoryFeature>
-        );
+        return (<RouteComponentMapper routes={routes}/>);
     }
 }
 
-export default MemoryUI;
+export default UI;

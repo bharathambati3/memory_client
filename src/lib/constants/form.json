@@ -35,6 +35,24 @@
   ],
   "addTopic": [
     {
+      "name": "category",
+      "value": "",
+      "type": "Select",
+      "dropDownId": "categories",
+      "keepValue": true,
+      "props": {
+        "label": "Category",
+        "fullWidth": true
+      },
+      "validations": [
+        {
+          "method": "isEmptyNumber",
+          "validWhen": false,
+          "errorMsg": "Please enter a category."
+        }
+      ]
+    },
+    {
       "name": "name",
       "value": "",
       "type": "Text",
@@ -65,12 +83,14 @@
           "errorMsg": "Please enter topic description."
         }
       ]
-    },
+    }
+  ],
+  "addMemory": [
     {
-      "name": "category",
+      "name": "topic",
       "value": "",
       "type": "Select",
-      "dropDownId": "categories",
+      "dropDownId": "topics",
       "keepValue": true,
       "props": {
         "label": "Topic description",
@@ -79,6 +99,38 @@
       "validations": [
         {
           "method": "isEmptyNumber",
+          "validWhen": false,
+          "errorMsg": "Please enter topic description."
+        }
+      ]
+    },
+    {
+      "name": "title",
+      "value": "",
+      "type": "Text",
+      "props": {
+        "label": "Memory name",
+        "fullWidth": true
+      },
+      "validations": [
+        {
+          "method": "isEmpty",
+          "validWhen": false,
+          "errorMsg": "Please enter topic name."
+        }
+      ]
+    },
+    {
+      "name": "content",
+      "value": "",
+      "type": "Text",
+      "props": {
+        "label": "Memory description",
+        "fullWidth": true
+      },
+      "validations": [
+        {
+          "method": "isEmpty",
           "validWhen": false,
           "errorMsg": "Please enter topic description."
         }

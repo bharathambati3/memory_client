@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import {ROUTE_CATEGORIES, ROUTE_MEMORY_CREATE, ROUTE_MEMORY_LIST} from "../../lib/constants/RouteConstants";
-import ListMemory from "./ui/ListMemory";
+import {ROUTE_MEMORY_CREATE, ROUTE_MEMORY_LIST} from "../../lib/constants/RouteConstants";
+import ListMemory from "./ui/listing/ListMemory";
 import CreateMemory from "./ui/CreateMemory";
 import RouteComponentMapper from "../router/routeComponentMapper";
 

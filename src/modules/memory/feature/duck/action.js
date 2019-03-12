@@ -1,9 +1,9 @@
 import {apiRequest, simpleError} from "../../../../lib/redux/actions/api";
-import {ADD_MEMORY, HTTP_GET, HTTP_POST, LIST_MEMORIES} from "../../../../lib/constants/NetworkConstants";
-import {ADD_MEMORY_ACTION, LIST_MEMORY_ACTION} from "../../../../lib/constants/actionIds";
+import {ADD_MEMORY, GET_MEMORY, HTTP_GET, HTTP_POST, LIST_MEMORIES} from "../../../../lib/constants/NetworkConstants";
+import {ADD_MEMORY_ACTION, GET_MEMORY_ACTION, LIST_MEMORY_ACTION} from "../../../../lib/constants/actionIds";
 import {notify} from "../../../../lib/redux/actions/notifications";
 import {setData} from "../../../../lib/redux/actions/manageData";
-import {KEY_LIST_MEMORIES} from "../../../../lib/constants/keys";
+import {KEY_LIST_MEMORIES, KEY_SELECTED_MEMORIES} from "../../../../lib/constants/keys";
 
 
 const convert = (req) => {
@@ -37,6 +37,17 @@ export const listMemoryApi = () => apiRequest({
     error: simpleError,
     success: (resp) => setData({
         key: KEY_LIST_MEMORIES,
+        value: resp.data
+    })
+})
+
+export const getMemory = (id) => apiRequest({
+    method: HTTP_GET,
+    url: `${GET_MEMORY}${id}`,
+    feature: GET_MEMORY_ACTION,
+    error: simpleError,
+    success: (resp) => setData({
+        key: KEY_SELECTED_MEMORIES,
         value: resp.data
     })
 })

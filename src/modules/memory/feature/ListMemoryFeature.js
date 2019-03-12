@@ -6,7 +6,7 @@ import {dateFormatter, extractor} from "../../../lib/utils/util";
 import {listMemoryApi} from "./duck/action";
 import {createTableActions} from "../../../lib/table/index";
 import {MENU_FISH_EYE} from "../../../lib/constants/iconConstants";
-import {ROUTE_MEMORY_CREATE} from "../../../lib/constants/RouteConstants";
+import {ROUTE_MEMORY_CREATE, ROUTE_MEMORY_VIEW} from "../../../lib/constants/RouteConstants";
 import {routeAction} from "../../../lib/redux/actions/historyAction";
 
 class ListMemoryFeature extends React.Component {
@@ -69,7 +69,13 @@ class ListMemoryFeature extends React.Component {
                 exec: (val, item) => createTableActions([
                     {
                         icon: MENU_FISH_EYE,
-                        cb: () => console.log(item)
+                        cb: () => {
+                            let idPlaceholder = /\/:id\//g;
+                            const url = ROUTE_MEMORY_VIEW.replace(idPlaceholder, `/${item.id}/`);
+                            this.props.routeAction({
+                                url
+                            })
+                        }
                     }
                 ])
             }

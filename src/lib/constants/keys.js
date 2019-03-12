@@ -6,4 +6,5 @@ export const KEY_SIDEBAR_SUB_SELECTED = 'sidebar.sub.selected';
 export const KEY_LOADING = 'loading';
 export const KEY_LIST_CATEGORIES = 'categories.list';
 export const KEY_LIST_MEMORIES = 'memories.list';
+export const KEY_SELECTED_MEMORIES = 'memories.selected';
 export const KEY_LIST_TOPICS = 'topics.list';

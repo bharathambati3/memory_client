@@ -8,6 +8,8 @@ import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import ListMemoryFeature from "../../feature/ListMemoryFeature";
 import MemoryCard from "./MemoryCard";
+import ListFilter from "../../../filters/list/ListFilter";
+import {createTable} from "../../../../lib/table/index";
 
 const style = theme => ({
     root: {
@@ -36,32 +38,15 @@ const ListMemory = props => {
     return (
         <ListMemoryFeature>
             {
-                ({data}) => (
-                    <div className={classes.root}>
-                        <GridList className={classes.gridList} cols={2.5}>
-                            {data.map(tile => (
-                                <GridListTile key={tile.img}>
-                                    <MemoryCard/>
-                                    <GridListTileBar
-                                        title={tile.title}
-                                        classes={{
-                                            root: classes.titleBar,
-                                            title: classes.title,
-                                        }}
-                                        actionIcon={
-                                            <IconButton>
-                                                <StarBorderIcon className={classes.title} />
-                                            </IconButton>
-                                        }
-                                    />
-                                </GridListTile>
-                            ))}
-                        </GridList>
+                (props) =>  {
+                    return <div >
+                        <ListFilter {...props} />
+                        {(props.show) ? createTable(props.tblMetaData, props.tblData) : null}
                     </div>
-                )
+                }
             }
         </ListMemoryFeature>
     );
 };
 
-export default withStyles(style)(ListMemory);;
+export default withStyles(style)(ListMemory);

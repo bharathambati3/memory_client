@@ -1,6 +1,7 @@
 import * as React from "react";
 import {FormControl, Input, InputLabel, MenuItem, Select, TextField} from "@material-ui/core";
 import LogoText from "./logoText/LogoText";
+import InputEditor from "./inputEditor/InputEditor";
 
 const componentFactory = (props) => {
   const { type, name, rest, className, id, disabled, classes } = props;
@@ -116,6 +117,15 @@ const componentFactory = (props) => {
           </Select>
         </FormControl>
       );
+    case 'Editor':
+        return (
+            <InputEditor
+                value={value}
+                name={name}
+                {...props.function}
+            />
+        )
+
     default:
       return <Input className={className} {...rest} {...props.function} />;
   }

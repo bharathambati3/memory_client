@@ -1,17 +1,21 @@
 import {apiRequest, simpleError} from "../../../../lib/redux/actions/api";
-import {ADD_MEMORY, HTTP_POST} from "../../../../lib/constants/NetworkConstants";
-import {ADD_MEMORY_ACTION} from "../../../../lib/constants/actionIds";
+import {ADD_MEMORY, HTTP_GET, HTTP_POST, LIST_MEMORIES} from "../../../../lib/constants/NetworkConstants";
+import {ADD_MEMORY_ACTION, LIST_MEMORY_ACTION} from "../../../../lib/constants/actionIds";
 import {notify} from "../../../../lib/redux/actions/notifications";
+import {setData} from "../../../../lib/redux/actions/manageData";
+import {KEY_LIST_MEMORIES} from "../../../../lib/constants/keys";
 
 
 const convert = (req) => {
     const obj = {
         topicId: req.formContent.topic.value,
         title: req.formContent.title.value,
-        content: req.formContent.content.value
+        content: JSON.stringify(req.formContent.content.value)
     }
 
-    return JSON.stringify(obj);
+    const stringResp = JSON.stringify(obj);
+    console.log(stringResp);
+    return stringResp;
 }
 
 export const createMemoryApi = (formState) => apiRequest({
@@ -24,4 +28,15 @@ export const createMemoryApi = (formState) => apiRequest({
         formState.onReset();
         return notify(`Successfully added ${JSON.stringify(resp)}`, 'success')
     }
+})
+
+export const listMemoryApi = () => apiRequest({
+    method: HTTP_GET,
+    url: LIST_MEMORIES,
+    feature: LIST_MEMORY_ACTION,
+    error: simpleError,
+    success: (resp) => setData({
+        key: KEY_LIST_MEMORIES,
+        value: resp.data
+    })
 })

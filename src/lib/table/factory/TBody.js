@@ -13,7 +13,17 @@ const TBody = props => {
                 <TableRow key={i}>
                     {meta.map(metaElem => {
                         const key = (metaElem.key) ? metaElem.key : metaElem.displayName;
-                        let val = row[key];
+
+                        let val;
+                        if (key.indexOf(".") !== -1) {
+                            const arr = key.split(".");
+                            val = row;
+                            for(const key of arr) {
+                                val = val[key];
+                            }
+                        } else {
+                            val = row[key];
+                        }
                         if(metaElem.exec) {
                             val = metaElem.exec(val, row);
                         }

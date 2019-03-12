@@ -39,6 +39,14 @@ class ListMemoryFeature extends React.Component {
     getListMetaInfo = () => {
         return [
             {
+                displayName: 'category name',
+                key: 'topic.category.name'
+            },
+            {
+                displayName: 'topic name',
+                key: 'topic.name'
+            },
+            {
                 displayName: 'title'
             },
             {

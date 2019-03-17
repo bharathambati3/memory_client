@@ -8,3 +8,4 @@ export const KEY_LIST_CATEGORIES = 'categories.list';
 export const KEY_LIST_MEMORIES = 'memories.list';
 export const KEY_SELECTED_MEMORIES = 'memories.selected';
 export const KEY_LIST_TOPICS = 'topics.list';
+export const KEY_FORMS_PREFIX = 'forms';

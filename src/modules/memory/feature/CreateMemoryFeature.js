@@ -9,9 +9,7 @@ import {listTopicsApi} from "../../topics/feature/duck/actions";
 class CreateMemoryFeature extends React.Component {
 
     componentDidMount() {
-        if (! this.props.topics) {
-            this.props.listTopicsApi();
-        }
+        this.props.listTopicsApi();
         this.props.setData({
             key: KEY_HEADER,
             value: "Create Memory"

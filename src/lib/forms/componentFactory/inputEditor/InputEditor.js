@@ -6,7 +6,17 @@ class InputEditor extends React.Component {
     constructor(props) {
         super(props);
         console.log("Created input editor");
-        this.state = {editorState: EditorState.createEmpty()};
+        let val;
+
+        try {
+
+            console.log("Created input editor json "+props.value);
+            val = EditorState.createWithContent(convertFromRaw(props.value));
+        } catch (e) {
+            console.log("creating new editor "+JSON.stringify(props.value));
+            val = EditorState.createEmpty()
+        }
+        this.state = {editorState: val};
         this.onChange = (editorState) => {
             const content = editorState.getCurrentContent();
             console.log(content);

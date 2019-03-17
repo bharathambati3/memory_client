@@ -7,6 +7,8 @@ import * as serviceWorker from './serviceWorker';
 import { Router } from 'react-router-dom';
 import { history } from './lib/router/';
 import NotificationScreen from "./lib/notifications/ui/NotificationScreen/NotificationScreen";
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+
 
 ReactDOM.render
 (

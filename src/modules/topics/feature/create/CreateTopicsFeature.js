@@ -9,9 +9,7 @@ import {setData} from "../../../../lib/redux/actions/manageData";
 class CreateTopicsFeature extends React.Component {
 
     componentDidMount() {
-        if (! this.props.categories) {
-            this.props.listCategoryApi();
-        }
+        this.props.listCategoryApi();
         this.props.setData({
             key: KEY_HEADER,
             value: "Create Topic"

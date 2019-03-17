@@ -1,5 +1,6 @@
 import React from 'react';
-import {Editor, convertToRaw, EditorState, convertFromRaw} from 'draft-js';
+import { Editor } from 'react-draft-wysiwyg';
+import {convertToRaw, EditorState, convertFromRaw} from 'draft-js';
 
 class InputEditor extends React.Component {
     constructor(props) {
@@ -24,7 +25,11 @@ class InputEditor extends React.Component {
     }
     render() {
         return (
-            <Editor editorState={this.state.editorState} onChange={this.onChange} />
+            <Editor editorState={this.state.editorState}
+                    toolbarClassName="toolbarClassName"
+                    wrapperClassName="wrapperClassName"
+                    editorClassName="editorClassName"
+                    onEditorStateChange={this.onChange} />
         );
     }
 }

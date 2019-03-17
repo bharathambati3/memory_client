@@ -1,5 +1,6 @@
 import React from "react";
-import {convertFromRaw, Editor, EditorState} from "draft-js";
+import { Editor } from 'react-draft-wysiwyg';
+import {convertFromRaw, EditorState} from "draft-js";
 import {Paper} from "@material-ui/core";
 
 const InputEditorView = (props) => {
@@ -18,15 +19,14 @@ const InputEditorView = (props) => {
     return (
         <div>
             <div>
-                {`Topic: ${props.memory.topic.name}`}
-            </div>
-            <div>
-                {`Title: ${props.memory.title}`}
-            </div>
-            <div>
                 {
                     (showEditor) ?
-                        <Editor editorState={val} /> :
+                        <Editor readOnly={true}
+                                toolbarHidden={true}
+                                toolbarClassName="toolbarClassName"
+                                wrapperClassName="wrapperClassName"
+                                editorClassName="editorClassName"
+                                editorState={val} /> :
                         <Paper > {val} </Paper>
                 }
             </div>

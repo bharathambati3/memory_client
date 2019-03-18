@@ -9,7 +9,9 @@ class ViewMemory extends React.Component {
             <ViewMemoryFeature>
                 {
                     ({memory}) => (<div>
-                        <InputEditorView memory={memory}/>
+                        {
+                            (memory) ? <InputEditorView memory={memory}/> : null
+                        }
                     </div>)
                 }
             </ViewMemoryFeature>

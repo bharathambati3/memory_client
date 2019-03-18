@@ -37,7 +37,7 @@ class ReduxFormHandler extends React.Component {
 
 
     getInitialState = (array, values) => {
-        const object = {};
+        const object = {...this.getState()};
         return array.reduce((acc, curr) => {
             let val;
             if (values && values[curr.name]) {

@@ -10,7 +10,8 @@ const convert = (req) => {
     const obj = {
         topicId: req.formContent.topic.value,
         title: req.formContent.title.value,
-        content: JSON.stringify(req.formContent.content.value)
+        content: JSON.stringify(req.formContent.content.value),
+        revisionTypeId: req.formContent.revisionType.value
     }
 
     const stringResp = JSON.stringify(obj);

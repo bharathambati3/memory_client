@@ -6,7 +6,10 @@ const CreateMemory = props => {
     return (
         <CreateMemoryFeature>
             {
-                (props) => <div>{createReduxForm({...props.formData})}</div>
+                (props) => <div>{
+                    (props.renderMemoryForm) ?
+                    createReduxForm({...props.formData}) : null
+                }</div>
             }
         </CreateMemoryFeature>
     );

@@ -21,7 +21,7 @@
     "validator": "^10.11.0"
   },
   "scripts": {
-    "start": "REACT_APP_ENV=development react-scripts start",
+    "start": "PORT=3004 REACT_APP_ENV=development react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

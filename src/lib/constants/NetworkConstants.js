@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:3103/api/';
+export const BASE_URL = 'http://localhost:3007/api/';
 export const ADD_CATEGORY = 'category';
 export const ADD_TOPIC = 'topic';
 export const ADD_MEMORY = 'memory';
@@ -8,6 +8,7 @@ export const DELETE_CATEGORY = 'category';
 export const DELETE_TOPIC = 'topic';
 export const LIST_CATEGORY = 'categories';
 export const LIST_TOPICS = 'topics';
+export const LIST_REVISION_TYPES = 'revision/types';
 export const HTTP_GET = 'get';
 export const HTTP_POST = 'post';
 export const HTTP_DELETE = 'delete';

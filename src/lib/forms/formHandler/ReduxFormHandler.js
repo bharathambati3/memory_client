@@ -10,7 +10,7 @@ import {extractor} from "../../utils/util";
 class ReduxFormHandler extends React.Component {
     constructor(props) {
         super(props);
-        if (! this.getState()) {
+        if (! this.getState() ) {
             const {data, values} = this.props;
             const state = this.getInitialState(data, values);
             this.updateState(state)
@@ -18,6 +18,7 @@ class ReduxFormHandler extends React.Component {
     }
 
     updateState = (newState) => {
+        console.log(`state updated ${newState}`)
         this.props.setData({
             key: this.getFormKey(),
             value: newState
@@ -98,6 +99,9 @@ class ReduxFormHandler extends React.Component {
     };
 
     render() {
+        if (! this.getState()) {
+            return <div>Form loading...</div>
+        }
         const {renderArray, onClick, onReset, dropDownData} = this.getStateAndProps();
         return (
             <Form dropDownData={dropDownData} data={this.props.data} function={renderArray}>

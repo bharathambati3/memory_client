@@ -1,9 +1,15 @@
 import {apiRequest, simpleError} from "../../../../lib/redux/actions/api";
-import {ADD_TOPIC, DELETE_TOPIC, HTTP_DELETE, HTTP_POST, LIST_TOPICS} from "../../../../lib/constants/NetworkConstants";
-import {ADD_TOPIC_ACTION, DELETE_TOPIC_ACTION, LIST_TOPICS_ACTION} from "../../../../lib/constants/actionIds";
+import {
+    ADD_TOPIC, DELETE_TOPIC, HTTP_DELETE, HTTP_POST, LIST_REVISION_TYPES,
+    LIST_TOPICS
+} from "../../../../lib/constants/NetworkConstants";
+import {
+    ADD_TOPIC_ACTION, DELETE_TOPIC_ACTION, LIST_REVISION_TYPES_ACTION,
+    LIST_TOPICS_ACTION
+} from "../../../../lib/constants/actionIds";
 import {notify} from "../../../../lib/redux/actions/notifications";
 import {setData} from "../../../../lib/redux/actions/manageData";
-import {KEY_LIST_TOPICS} from "../../../../lib/constants/keys";
+import {KEY_LIST_REVISION_TYPES, KEY_LIST_TOPICS} from "../../../../lib/constants/keys";
 
 const convert = (req) => {
     const obj = {
@@ -33,6 +39,16 @@ export const listTopicsApi = () => apiRequest({
     error: simpleError,
     success: (resp) => setData({
         key: KEY_LIST_TOPICS,
+        value: resp.data
+    })
+});
+
+export const listRevisionTypesApi = () => apiRequest({
+    url: LIST_REVISION_TYPES,
+    feature: LIST_REVISION_TYPES_ACTION,
+    error: simpleError,
+    success: (resp) => setData({
+        key: KEY_LIST_REVISION_TYPES,
         value: resp.data
     })
 });

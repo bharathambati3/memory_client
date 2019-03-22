@@ -3,6 +3,7 @@ export const ADD_CATEGORY = 'category';
 export const ADD_TOPIC = 'topic';
 export const ADD_MEMORY = 'memory';
 export const LIST_MEMORIES = 'memories';
+export const LIST_REMEMBER_MEMORIES = 'memory/revisions';
 export const GET_MEMORY = 'memory/';
 export const DELETE_CATEGORY = 'category';
 export const DELETE_TOPIC = 'topic';

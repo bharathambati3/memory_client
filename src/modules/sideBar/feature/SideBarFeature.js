@@ -10,6 +10,8 @@ import {KEY_SHOW_SIDEBAR, KEY_SIDEBAR_SELECTED, KEY_SIDEBAR_SUB_SELECTED} from "
 import {extractor} from "../../../lib/utils/util";
 import {setData} from "../../../lib/redux/actions/manageData";
 
+const MAIN_ITEM_MEMORY = 'memory';
+
 class SideBarFeature extends React.Component {
 
     render() {
@@ -62,6 +64,12 @@ class SideBarFeature extends React.Component {
 
     getSubItems = (name, url) => {
         switch (name) {
+            case MAIN_ITEM_MEMORY:
+                return [
+                    this.csi('create', MENU_CREATE, url+'/create'),
+                    this.csi('remember list ', MENU_LIST, url+'/remember.'),
+                    this.csi('all memories', MENU_LIST, url),
+                ]
             default:
                 return [
                     this.csi('create', MENU_CREATE, url+'/create'),
@@ -80,7 +88,7 @@ class SideBarFeature extends React.Component {
         return [
             this.mi('categories', MENU_CATEGORY, ROUTE_CATEGORIES),
             this.mi('topics', MENU_TOPIC, ROUTE_TOPICS),
-            this.mi('memory', MENU_MEMORY, ROUTE_MEMORY),
+            this.mi(MAIN_ITEM_MEMORY, MENU_MEMORY, ROUTE_MEMORY),
         ]
     }
 }

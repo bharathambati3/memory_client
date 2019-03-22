@@ -11,6 +11,7 @@ export const ROUTE_TOPICS_DELETE = '/topics/delete';
 export const ROUTE_MEMORY = '/memories';
 export const ROUTE_MEMORY_CREATE = '/memories/create';
 export const ROUTE_MEMORY_LIST = '/memories';
+export const ROUTE_MEMORY_REMEMBER_LIST = '/memories/remember';
 export const ROUTE_MEMORY_VIEW = '/memories/:id/view';
 export const ROUTE_MEMORY_UPDATE = '/memories/update';
 export const ROUTE_MEMORY_DELETE = '/memories/delete';

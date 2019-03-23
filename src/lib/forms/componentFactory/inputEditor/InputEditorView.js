@@ -2,6 +2,7 @@ import React from "react";
 import { Editor } from 'react-draft-wysiwyg';
 import {convertFromRaw, EditorState} from "draft-js";
 import {Paper} from "@material-ui/core";
+import { Button } from '@material-ui/core';
 
 const InputEditorView = (props) => {
     let val;
@@ -30,6 +31,18 @@ const InputEditorView = (props) => {
                         <Paper > {val} </Paper>
                 }
             </div>
+
+            <Button
+                style={{
+                    margin: 10
+                }}
+                color='primary'
+                size='large'
+                variant='contained'
+                onClick={props.onMarkAsRead}
+            >
+                Mark as read
+            </Button>
         </div>
     );
 }

@@ -4,6 +4,7 @@ export const ADD_TOPIC = 'topic';
 export const ADD_MEMORY = 'memory';
 export const LIST_MEMORIES = 'memories';
 export const LIST_REMEMBER_MEMORIES = 'memory/revisions';
+export const LIST_MEMORY_REVISED = 'memory/revised';
 export const GET_MEMORY = 'memory/';
 export const DELETE_CATEGORY = 'category';
 export const DELETE_TOPIC = 'topic';

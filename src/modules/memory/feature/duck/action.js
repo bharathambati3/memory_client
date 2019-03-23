@@ -1,10 +1,10 @@
 import {apiRequest, simpleError} from "../../../../lib/redux/actions/api";
 import {
-    ADD_MEMORY, GET_MEMORY, HTTP_GET, HTTP_POST, LIST_MEMORIES,
+    ADD_MEMORY, GET_MEMORY, HTTP_GET, HTTP_POST, LIST_MEMORIES, LIST_MEMORY_REVISED,
     LIST_REMEMBER_MEMORIES
 } from "../../../../lib/constants/NetworkConstants";
 import {
-    ADD_MEMORY_ACTION, GET_MEMORY_ACTION, LIST_MEMORY_ACTION,
+    ADD_MEMORY_ACTION, GET_MEMORY_ACTION, LIST_MEMORY_ACTION, LIST_MEMORY_REVISED_ACTION,
     LIST_REMEMBER_MEMORY_ACTION
 } from "../../../../lib/constants/actionIds";
 import {notify} from "../../../../lib/redux/actions/notifications";
@@ -13,6 +13,8 @@ import {
     KEY_HEADER, KEY_LIST_MEMORIES, KEY_LIST_REMEMBER_MEMORIES,
     KEY_SELECTED_MEMORIES
 } from "../../../../lib/constants/keys";
+import {routeAction} from "../../../../lib/redux/actions/historyAction";
+import {ROUTE_MEMORY_REMEMBER_LIST, ROUTE_TOPICS_CREATE} from "../../../../lib/constants/RouteConstants";
 
 
 const convert = (req) => {
@@ -59,6 +61,20 @@ export const listRememberMemoryApi = () => apiRequest({
     success: (resp) => setData({
         key: KEY_LIST_REMEMBER_MEMORIES,
         value: resp.data
+    })
+})
+
+export const memoryRevised = ({id}) => apiRequest({
+    method: HTTP_POST,
+    body: JSON.stringify({
+        memoryId: id,
+        comments: ""
+    }),
+    url: LIST_MEMORY_REVISED,
+    feature: LIST_MEMORY_REVISED_ACTION,
+    error: simpleError,
+    success: (resp) => routeAction({
+        url: ROUTE_MEMORY_REMEMBER_LIST
     })
 })
 

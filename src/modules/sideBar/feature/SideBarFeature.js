@@ -67,7 +67,7 @@ class SideBarFeature extends React.Component {
             case MAIN_ITEM_MEMORY:
                 return [
                     this.csi('create', MENU_CREATE, url+'/create'),
-                    this.csi('remember list ', MENU_LIST, url+'/remember.'),
+                    this.csi('remember list ', MENU_LIST, url+'/remember'),
                     this.csi('all memories', MENU_LIST, url),
                 ]
             default:

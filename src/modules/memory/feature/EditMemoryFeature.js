@@ -1,18 +1,18 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
-import {getMemory} from "./duck/action";
+import {editMemoryApi, initializeEditMemory} from "./duck/action";
 import {extractor} from "../../../lib/utils/util";
-import {KEY_HEADER, KEY_SELECTED_MEMORIES} from "../../../lib/constants/keys";
+import {KEY_CURRENT_EDIT_MEMORY} from "../../../lib/constants/keys";
 import {setData} from "../../../lib/redux/actions/manageData";
 
 class EditMemoryFeature extends React.Component {
 
     componentDidMount() {
-        this.props.setData({
-            key: KEY_HEADER,
-            value: `Edit ${this.props.memory.topic.name} - ${this.props.memory.title}`
-        })
+        let id = this.props.match.params.id;
+        console.log(`cdm ${id}`)
+        this.id = id;
+        this.props.initializeEditMemory(id);
     }
 
     render() {
@@ -21,13 +21,20 @@ class EditMemoryFeature extends React.Component {
 
     getChildrenProps = () => {
         return {
-            memory: this.props.memory,
+            id: this.id,
+            onSubmit: this.props.editMemoryApi,
+            content: this.props.content,
+            onChange: (data) => this.props.setData({
+                key: KEY_CURRENT_EDIT_MEMORY,
+                value: data.target.value
+            })
         };
     }
 }
 
 const mapStateToProps = (state) => ({
-    memory: extractor(state, KEY_SELECTED_MEMORIES)
+    content: extractor(state, KEY_CURRENT_EDIT_MEMORY),
+
 });
 
-export default connect(mapStateToProps, {getMemory, setData})(withRouter(EditMemoryFeature));
+export default connect(mapStateToProps, {initializeEditMemory, setData, editMemoryApi})(withRouter(EditMemoryFeature));

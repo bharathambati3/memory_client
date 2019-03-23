@@ -10,6 +10,7 @@ import {
 import {notify} from "../../../../lib/redux/actions/notifications";
 import {setData} from "../../../../lib/redux/actions/manageData";
 import {
+    KEY_CURRENT_EDIT_MEMORY,
     KEY_HEADER, KEY_LIST_MEMORIES, KEY_LIST_REMEMBER_MEMORIES,
     KEY_SELECTED_MEMORIES
 } from "../../../../lib/constants/keys";
@@ -31,6 +32,18 @@ const convert = (req) => {
 }
 
 export const createMemoryApi = (formState) => apiRequest({
+    body: convert(formState),
+    method: HTTP_POST,
+    url: ADD_MEMORY,
+    feature: ADD_MEMORY_ACTION,
+    error: simpleError,
+    success: (resp) => {
+        formState.onReset();
+        return notify(`Successfully added ${JSON.stringify(resp)}`, 'success')
+    }
+})
+
+export const editMemoryApi = (formState) => apiRequest({
     body: convert(formState),
     method: HTTP_POST,
     url: ADD_MEMORY,
@@ -91,6 +104,23 @@ export const getMemory = (id) => apiRequest({
         setData({
             key: KEY_HEADER,
             value: `${resp.data.topic.name} - ${resp.data.title}`
+        })
+    ]
+})
+
+export const initializeEditMemory = (id) => apiRequest({
+    method: HTTP_GET,
+    url: `${GET_MEMORY}${id}`,
+    feature: GET_MEMORY_ACTION,
+    error: simpleError,
+    success: (resp) => [
+        setData({
+            key: KEY_CURRENT_EDIT_MEMORY,
+            value: resp.data.content
+        }),
+        setData({
+            key: KEY_HEADER,
+            value: `Edit ${resp.data.topic.name} - ${resp.data.title}`
         })
     ]
 })

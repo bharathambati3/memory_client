@@ -1,5 +1,6 @@
 import React from 'react';
 import EditMemoryFeature from "../feature/EditMemoryFeature";
+import InputEditor from "../../../lib/forms/componentFactory/inputEditor/InputEditor";
 
 class EditMemory extends React.Component {
 
@@ -7,9 +8,13 @@ class EditMemory extends React.Component {
         return (
             <EditMemoryFeature>
                 {
-                    (props) => (<div>
-                        "Edit memory"
-                    </div>)
+                    (props) => (
+                        <InputEditor
+                            key={props.id}
+                            value={props.content}
+                            onChange={props.onChange}
+                        />
+                    )
                 }
             </EditMemoryFeature>
         )

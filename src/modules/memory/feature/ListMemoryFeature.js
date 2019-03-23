@@ -3,11 +3,12 @@ import {connect} from "react-redux";
 import {KEY_HEADER, KEY_LIST_MEMORIES} from "../../../lib/constants/keys";
 import {setData} from "../../../lib/redux/actions/manageData";
 import {dateFormatter, extractor} from "../../../lib/utils/util";
-import {listMemoryApi} from "./duck/action";
+import {listMemoryApi, onMemoryEdit} from "./duck/action";
 import {createTableActions} from "../../../lib/table/index";
-import {MENU_FISH_EYE} from "../../../lib/constants/iconConstants";
+import {MENU_FISH_EYE, MENU_UPDATE} from "../../../lib/constants/iconConstants";
 import {ROUTE_MEMORY_CREATE, ROUTE_MEMORY_VIEW} from "../../../lib/constants/RouteConstants";
 import {routeAction} from "../../../lib/redux/actions/historyAction";
+import * as ROUTE_MEMORY_EDIT from "lodash";
 
 class ListMemoryFeature extends React.Component {
 
@@ -76,6 +77,10 @@ class ListMemoryFeature extends React.Component {
                                 url
                             })
                         }
+                    },
+                    {
+                        icon: MENU_UPDATE,
+                        cb: () => this.props.onMemoryEdit(item.id)
                     }
                 ])
             }
@@ -88,4 +93,4 @@ const mapStateToProps = (state) => ({
     list: extractor(state, KEY_LIST_MEMORIES)
 });
 
-export default connect(mapStateToProps, {setData, listMemoryApi, routeAction})(ListMemoryFeature);
+export default connect(mapStateToProps, {setData, onMemoryEdit, listMemoryApi, routeAction})(ListMemoryFeature);

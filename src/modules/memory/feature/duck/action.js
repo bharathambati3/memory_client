@@ -14,7 +14,7 @@ import {
     KEY_SELECTED_MEMORIES
 } from "../../../../lib/constants/keys";
 import {routeAction} from "../../../../lib/redux/actions/historyAction";
-import {ROUTE_MEMORY_REMEMBER_LIST, ROUTE_TOPICS_CREATE} from "../../../../lib/constants/RouteConstants";
+import {ROUTE_MEMORY_REMEMBER_LIST, ROUTE_MEMORY_EDIT} from "../../../../lib/constants/RouteConstants";
 
 
 const convert = (req) => {
@@ -94,3 +94,12 @@ export const getMemory = (id) => apiRequest({
         })
     ]
 })
+
+export const onMemoryEdit = (id) => {
+    let idPlaceholder = /\/:id\//g;
+    const url = ROUTE_MEMORY_EDIT.replace(idPlaceholder, `/${id}/`);
+    return routeAction({
+        url
+    })
+}
+

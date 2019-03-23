@@ -1,6 +1,6 @@
 import React from 'react';
 import ViewMemoryFeature from "../feature/ViewMemoryFeature";
-import InputEditorView from "../../../lib/forms/componentFactory/inputEditor/InputEditorView";
+import ViewMemoryWrapper from "./ViewMemoryWrapper";
 
 class ViewMemory extends React.Component {
 
@@ -8,9 +8,9 @@ class ViewMemory extends React.Component {
         return (
             <ViewMemoryFeature>
                 {
-                    ({memory, onMarkAsRead}) => (<div>
+                    (props) => (<div>
                         {
-                            (memory) ? <InputEditorView memory={memory} onMarkAsRead={onMarkAsRead}/> : null
+                            (props.memory) ? <ViewMemoryWrapper {...props} /> : null
                         }
                     </div>)
                 }

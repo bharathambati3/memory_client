@@ -1,12 +1,12 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import {connect} from "react-redux";
 import {extractor} from "../../../lib/utils/util";
 import {KEY_BOTTON_NAV_SELECTED} from "../../../lib/constants/keys";
 import {MENU_CATEGORY, MENU_MEMORY, MENU_TOPIC} from "../../../lib/constants/iconConstants";
-import {setData} from "../../../lib/redux/actions/manageData";
 import {onBottomNavChange} from "./duck/action";
 import {
-    ROUTE_CATEGORIES_LIST, ROUTE_MEMORY_REMEMBER_LIST,
+    ROUTE_CATEGORIES_LIST,
+    ROUTE_MEMORY_REMEMBER_LIST,
     ROUTE_TOPICS_LIST
 } from "../../../lib/constants/RouteConstants";
 

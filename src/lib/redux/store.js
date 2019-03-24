@@ -1,12 +1,12 @@
-import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
-import {apiMiddleware} from './middleware/core/apiMDL';
+import {applyMiddleware, combineReducers, compose, createStore} from "redux";
+import {apiMiddleware} from "./middleware/core/apiMDL";
 import {loggerMiddleware} from "./middleware/core/loggerMDL";
 import {actionSplitterMiddleware} from "./middleware/core/actionSplitterMDL";
 import {STORE_STATE} from "../constants/constants";
-import {get, set} from '../utils/storage';
+import {get, set} from "../utils/storage";
 import {setDataReducer} from "./reducers/setDataReducer";
 import {routingMDL} from "./middleware/core/routingMDL";
-import notificationReducer from '../notifications/feature/duck/reducer';
+import notificationReducer from "../notifications/feature/duck/reducer";
 
 // shape the state structure
 const rootReducer = combineReducers({

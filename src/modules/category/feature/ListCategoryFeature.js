@@ -1,10 +1,10 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import {connect} from "react-redux";
 import {deleteCategoryApi, listCategoryApi} from "./duck/actions";
 import {dateFormatter, extractor} from "../../../lib/utils/util";
 import {KEY_HEADER, KEY_LIST_CATEGORIES} from "../../../lib/constants/keys";
 import {createTableActions} from "../../../lib/table/index";
-import {MENU_DELETE, MENU_FISH_EYE, MENU_VIEW} from "../../../lib/constants/iconConstants";
+import {MENU_DELETE, MENU_FISH_EYE} from "../../../lib/constants/iconConstants";
 import {routeAction} from "../../../lib/redux/actions/historyAction";
 import {ROUTE_CATEGORIES_CREATE} from "../../../lib/constants/RouteConstants";
 import {setData} from "../../../lib/redux/actions/manageData";

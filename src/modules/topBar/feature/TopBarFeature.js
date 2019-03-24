@@ -1,5 +1,5 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import {connect} from "react-redux";
 import {setData} from "../../../lib/redux/actions/manageData";
 import {extractor} from "../../../lib/utils/util";
 import {KEY_HEADER, KEY_SHOW_SIDEBAR} from "../../../lib/constants/keys";

@@ -1,5 +1,5 @@
 import {SET_DATA_KEY_DELIMITER} from "../constants/keys";
-import moment from 'moment';
+import moment from "moment";
 
 export const extractor = (data, key) => {
     const arr = key.split(SET_DATA_KEY_DELIMITER);

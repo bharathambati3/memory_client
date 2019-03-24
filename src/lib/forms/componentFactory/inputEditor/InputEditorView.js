@@ -1,5 +1,5 @@
 import React from "react";
-import { Editor } from 'react-draft-wysiwyg';
+import {Editor} from "react-draft-wysiwyg";
 import {convertFromRaw, EditorState} from "draft-js";
 import {Paper} from "@material-ui/core";
 

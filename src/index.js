@@ -10,8 +10,7 @@ import NotificationScreen from "./lib/notifications/ui/NotificationScreen/Notifi
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 
-ReactDOM.render
-(
+ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
             <NotificationScreen>

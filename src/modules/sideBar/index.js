@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import SideBarFeature from "./feature/SideBarFeature";
 import SideBar from "./ui/SideBar";
 

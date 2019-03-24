@@ -1,21 +1,31 @@
 import {apiRequest, simpleError} from "../../../../lib/redux/actions/api";
 import {
-    ADD_MEMORY, GET_MEMORY, HTTP_GET, HTTP_POST, LIST_MEMORIES, LIST_MEMORY_REVISED,
+    ADD_MEMORY,
+    GET_MEMORY,
+    HTTP_GET,
+    HTTP_POST,
+    LIST_MEMORIES,
+    LIST_MEMORY_REVISED,
     LIST_REMEMBER_MEMORIES
 } from "../../../../lib/constants/NetworkConstants";
 import {
-    ADD_MEMORY_ACTION, GET_MEMORY_ACTION, LIST_MEMORY_ACTION, LIST_MEMORY_REVISED_ACTION,
+    ADD_MEMORY_ACTION,
+    GET_MEMORY_ACTION,
+    LIST_MEMORY_ACTION,
+    LIST_MEMORY_REVISED_ACTION,
     LIST_REMEMBER_MEMORY_ACTION
 } from "../../../../lib/constants/actionIds";
 import {notify} from "../../../../lib/redux/actions/notifications";
 import {setData} from "../../../../lib/redux/actions/manageData";
 import {
     KEY_CURRENT_EDIT_MEMORY,
-    KEY_HEADER, KEY_LIST_MEMORIES, KEY_LIST_REMEMBER_MEMORIES,
+    KEY_HEADER,
+    KEY_LIST_MEMORIES,
+    KEY_LIST_REMEMBER_MEMORIES,
     KEY_SELECTED_MEMORIES
 } from "../../../../lib/constants/keys";
 import {routeAction} from "../../../../lib/redux/actions/historyAction";
-import {ROUTE_MEMORY_REMEMBER_LIST, ROUTE_MEMORY_EDIT} from "../../../../lib/constants/RouteConstants";
+import {ROUTE_MEMORY_EDIT, ROUTE_MEMORY_REMEMBER_LIST} from "../../../../lib/constants/RouteConstants";
 
 
 const convert = (req) => {

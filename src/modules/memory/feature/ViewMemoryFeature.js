@@ -1,8 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {getMemory, memoryRevised, onMemoryEdit} from "./duck/action";
-import {KEY_HEADER, KEY_SELECTED_MEMORIES} from "../../../lib/constants/keys";
+import {KEY_SELECTED_MEMORIES} from "../../../lib/constants/keys";
 import {extractor} from "../../../lib/utils/util";
 import {setData} from "../../../lib/redux/actions/manageData";
 

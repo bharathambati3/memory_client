@@ -1,4 +1,4 @@
-import { isEmpty } from 'lodash';
+import {isEmpty} from "lodash";
 
 const parse = JSON.parse;
 const stringify = JSON.stringify;

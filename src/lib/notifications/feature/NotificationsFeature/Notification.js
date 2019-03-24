@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { connect } from 'react-redux';
-import { withSnackbar } from 'notistack';
+import * as React from "react";
+import {connect} from "react-redux";
+import {withSnackbar} from "notistack";
 import {removeNotification} from "../../../redux/actions/notifications";
 import {KEY_LOADING} from "../../../constants/keys";
 import {extractor} from "../../../utils/util";

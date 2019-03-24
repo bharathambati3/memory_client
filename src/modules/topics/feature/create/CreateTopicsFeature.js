@@ -1,5 +1,5 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import {connect} from "react-redux";
 import {createTopicApi} from "../duck/actions";
 import {extractor} from "../../../../lib/utils/util";
 import {KEY_HEADER, KEY_LIST_CATEGORIES} from "../../../../lib/constants/keys";

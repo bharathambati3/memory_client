@@ -1,13 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
+import React from "react";
+import {withStyles} from "@material-ui/core/styles";
 import ListMemoryFeature from "../../feature/ListMemoryFeature";
-import MemoryCard from "./MemoryCard";
 import ListFilter from "../../../filters/list/ListFilter";
 import {createTable} from "../../../../lib/table/index";
 
@@ -33,8 +26,7 @@ const style = theme => ({
     },
 });
 
-const ListMemory = props => {
-    const {classes} = props;
+const ListMemory = () => {
     return (
         <ListMemoryFeature>
             {

@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import {withStyles} from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import RestoreIcon from "@material-ui/icons/Restore";
 import BottomBarFeature from "../feature/BottomBarFeature";
 import {getIcon} from "../../../lib/icons/factory";
 

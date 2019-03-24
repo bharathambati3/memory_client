@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import FormHandler from "./formHandler/FormHandler";
 import formData from "../constants/form.json";

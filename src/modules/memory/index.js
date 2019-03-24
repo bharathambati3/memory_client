@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import {
-    ROUTE_MEMORY_CREATE, ROUTE_MEMORY_EDIT, ROUTE_MEMORY_LIST, ROUTE_MEMORY_REMEMBER_LIST,
+    ROUTE_MEMORY_CREATE,
+    ROUTE_MEMORY_EDIT,
+    ROUTE_MEMORY_LIST,
+    ROUTE_MEMORY_REMEMBER_LIST,
     ROUTE_MEMORY_VIEW
 } from "../../lib/constants/RouteConstants";
 import ListMemory from "./ui/listing/ListMemory";

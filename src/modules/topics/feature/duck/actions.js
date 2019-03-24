@@ -1,10 +1,16 @@
 import {apiRequest, simpleError} from "../../../../lib/redux/actions/api";
 import {
-    ADD_TOPIC, DELETE_TOPIC, HTTP_DELETE, HTTP_POST, LIST_REVISION_TYPES,
+    ADD_TOPIC,
+    DELETE_TOPIC,
+    HTTP_DELETE,
+    HTTP_POST,
+    LIST_REVISION_TYPES,
     LIST_TOPICS
 } from "../../../../lib/constants/NetworkConstants";
 import {
-    ADD_TOPIC_ACTION, DELETE_TOPIC_ACTION, LIST_REVISION_TYPES_ACTION,
+    ADD_TOPIC_ACTION,
+    DELETE_TOPIC_ACTION,
+    LIST_REVISION_TYPES_ACTION,
     LIST_TOPICS_ACTION
 } from "../../../../lib/constants/actionIds";
 import {notify} from "../../../../lib/redux/actions/notifications";

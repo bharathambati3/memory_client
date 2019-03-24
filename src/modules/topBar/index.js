@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import TopBarFeature from "./feature/TopBarFeature";
 import TopBar from "./ui/TopBar";
 

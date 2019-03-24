@@ -1,5 +1,5 @@
-import React from 'react';
-import CreateTopicsFeature from '../../feature/create/CreateTopicsFeature';
+import React from "react";
+import CreateTopicsFeature from "../../feature/create/CreateTopicsFeature";
 import {createForm} from "../../../../lib/forms/index";
 
 const Topics = props => {

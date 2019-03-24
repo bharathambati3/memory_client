@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import IconButton from "@material-ui/core/IconButton";
 import {getIcon} from "../../../lib/icons/factory";
 import {MENU_CREATE, MENU_REFRESH} from "../../../lib/constants/iconConstants";

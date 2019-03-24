@@ -1,5 +1,4 @@
 import React from "react";
-import {Notification} from "../../feature";
 import LoadingNotifier from "../singleNotificationScreen/LoadingNotifier";
 import {SnackbarProvider} from "notistack";
 import {Button, withStyles} from "@material-ui/core";

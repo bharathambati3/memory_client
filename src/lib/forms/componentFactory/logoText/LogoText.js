@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Grid, TextField } from '@material-ui/core';
+import * as React from "react";
+import {Grid, TextField} from "@material-ui/core";
 import {getIcon} from "../../../icons/factory";
 
 const logoText = (props) => {

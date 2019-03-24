@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {createForm} from "../../../../lib/forms/index";
 
 const CreateCategory = props => {

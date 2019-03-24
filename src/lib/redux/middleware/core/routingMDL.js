@@ -1,5 +1,5 @@
 // import { ROUTE } from '../../../constants/ActionConstants';
-import { history } from '../../../router';
+import {history} from "../../../router";
 import {ROUTE} from "../../../constants/actionConstants";
 
 export const routingMDL = () => (next) => (action) => {

@@ -1,7 +1,10 @@
 import {apiRequest, simpleError} from "../../../../lib/redux/actions/api";
 import {ADD_CATEGORY_ACTION, DELETE_CATEGORY_ACTION, LIST_CATEGORY_ACTION} from "../../../../lib/constants/actionIds";
 import {
-    ADD_CATEGORY, DELETE_CATEGORY, HTTP_DELETE, HTTP_POST,
+    ADD_CATEGORY,
+    DELETE_CATEGORY,
+    HTTP_DELETE,
+    HTTP_POST,
     LIST_CATEGORY
 } from "../../../../lib/constants/NetworkConstants";
 import {KEY_LIST_CATEGORIES} from "../../../../lib/constants/keys";

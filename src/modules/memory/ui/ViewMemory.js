@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import ViewMemoryFeature from "../feature/ViewMemoryFeature";
 import ViewMemoryWrapper from "./ViewMemoryWrapper";
 

@@ -1,8 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import CategoryFeature from "./feature/CategoryFeature";
-import {
-    ROUTE_CATEGORIES_CREATE, ROUTE_CATEGORIES_LIST,
-} from "../../lib/constants/RouteConstants";
+import {ROUTE_CATEGORIES_CREATE, ROUTE_CATEGORIES_LIST} from "../../lib/constants/RouteConstants";
 import CreateCategory from "./ui/create/CreateCategory";
 import RouteComponentMapper from "../router/routeComponentMapper";
 import ListCategory from "./ui/list/ListCategory";

@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 import InputEditorView from "../../../lib/forms/componentFactory/inputEditor/InputEditorView";
-import { Button } from '@material-ui/core';
+import {Button} from "@material-ui/core";
 
 const ViewMemoryWrapper = props => {
-    const {memory, onMarkAsRead, onEdit} = props;
+    const {memory, onMarkAsRead} = props;
     return (
         <div>
             <Button

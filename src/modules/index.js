@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import TopBar from "./topBar";
 import BottomBar from "./bottomBar/ui/BottomBar";
 import RouteComponentMapper from "./router/routeComponentMapper";

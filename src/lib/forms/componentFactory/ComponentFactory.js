@@ -4,7 +4,7 @@ import LogoText from "./logoText/LogoText";
 import InputEditor from "./inputEditor/InputEditor";
 
 const componentFactory = (props) => {
-  const { type, name, rest, className, id, disabled, classes } = props;
+  const { type, name, rest, className, id, disabled} = props;
   const { fullWidth, icon, ...restRootProps } = props.rootProps;
   const { isError, errorMsg } = props.function.data;
   const value = props.function.data.value;

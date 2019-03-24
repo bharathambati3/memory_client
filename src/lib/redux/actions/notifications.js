@@ -3,7 +3,7 @@ import {NOTIFY, REMOVE_NOTIFICATION} from "../../constants/actionConstants";
 export const notify = (msg, type) => ({
     type: NOTIFY,
     payload: {
-        id: (new Date).getTime(),
+        id: new Date().getTime(),
         message: msg,
         type
     },

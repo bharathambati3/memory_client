@@ -10,21 +10,17 @@ class InputEditor extends React.Component {
 
         try {
             let pval = props.value;
-            console.log("Created input editor json "+props.value);
             if (typeof pval === 'string' || pval instanceof String) {
                 pval = JSON.parse(pval);
             }
             val = EditorState.createWithContent(convertFromRaw(pval));
         } catch (e) {
-            console.log("creating new editor "+JSON.stringify(props.value));
             val = EditorState.createEmpty()
         }
         this.state = {editorState: val};
         this.onChange = (editorState) => {
             const content = editorState.getCurrentContent();
-            console.log(content);
             const dataToSaveBackend = convertToRaw(content);
-            console.log(dataToSaveBackend);
 
             const data = {
                 target: {

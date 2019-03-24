@@ -1,5 +1,5 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import {connect} from "react-redux";
 import {addCategoryApi} from "./duck/actions";
 import {KEY_HEADER} from "../../../lib/constants/keys";
 import {setData} from "../../../lib/redux/actions/manageData";

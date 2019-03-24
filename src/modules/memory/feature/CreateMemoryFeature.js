@@ -1,5 +1,5 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import {connect} from "react-redux";
 import {KEY_HEADER, KEY_LIST_REVISION_TYPES, KEY_LIST_TOPICS} from "../../../lib/constants/keys";
 import {setData} from "../../../lib/redux/actions/manageData";
 import {createMemoryApi} from "./duck/action";

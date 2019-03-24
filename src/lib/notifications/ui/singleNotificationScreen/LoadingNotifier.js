@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import Notification from "../../feature/NotificationsFeature/Notification";
-import Spinner from '../../../spinner';
+import Spinner from "../../../spinner";
 
 const LoadingNotifier = () => {
     return (

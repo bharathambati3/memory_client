@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import CreateMemoryFeature from "../feature/CreateMemoryFeature";
 import {createReduxForm} from "../../../lib/forms/index";
 

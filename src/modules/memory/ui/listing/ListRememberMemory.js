@@ -26,8 +26,7 @@ const style = theme => ({
     },
 });
 
-const ListRememberMemory = props => {
-    const {classes} = props;
+const ListRememberMemory = () => {
     return (
         <ListRememberMemoryFeature>
             {

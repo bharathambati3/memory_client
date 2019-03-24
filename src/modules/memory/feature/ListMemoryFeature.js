@@ -8,7 +8,6 @@ import {createTableActions} from "../../../lib/table/index";
 import {MENU_FISH_EYE, MENU_UPDATE} from "../../../lib/constants/iconConstants";
 import {ROUTE_MEMORY_CREATE, ROUTE_MEMORY_VIEW} from "../../../lib/constants/RouteConstants";
 import {routeAction} from "../../../lib/redux/actions/historyAction";
-import * as ROUTE_MEMORY_EDIT from "lodash";
 
 class ListMemoryFeature extends React.Component {
 

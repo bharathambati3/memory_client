@@ -1,9 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import {
-    MENU_CATEGORY, MENU_CREATE, MENU_DELETE, MENU_LIST, MENU_MEMORY, MENU_TOPIC,
-    MENU_UPDATE
-} from "../../../lib/constants/iconConstants";
+import React from "react";
+import {connect} from "react-redux";
+import {MENU_CATEGORY, MENU_CREATE, MENU_LIST, MENU_MEMORY, MENU_TOPIC} from "../../../lib/constants/iconConstants";
 import {ROUTE_CATEGORIES, ROUTE_MEMORY, ROUTE_TOPICS} from "../../../lib/constants/RouteConstants";
 import {routeAction} from "../../../lib/redux/actions/historyAction";
 import {KEY_SHOW_SIDEBAR, KEY_SIDEBAR_SELECTED, KEY_SIDEBAR_SUB_SELECTED} from "../../../lib/constants/keys";

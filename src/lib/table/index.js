@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import TableFactory from "./factory/TableFactory";
 import {getIcon} from "../icons/factory";
-import IconButton from '@material-ui/core/IconButton';
+import IconButton from "@material-ui/core/IconButton";
 
 
 const singleAction = (datum) => {

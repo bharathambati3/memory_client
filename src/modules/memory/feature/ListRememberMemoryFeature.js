@@ -1,9 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
-import {KEY_HEADER, KEY_LIST_MEMORIES, KEY_LIST_REMEMBER_MEMORIES} from "../../../lib/constants/keys";
+import {KEY_HEADER, KEY_LIST_REMEMBER_MEMORIES} from "../../../lib/constants/keys";
 import {setData} from "../../../lib/redux/actions/manageData";
 import {dateFormatter, extractor} from "../../../lib/utils/util";
-import {listMemoryApi, listRememberMemoryApi} from "./duck/action";
+import {listRememberMemoryApi} from "./duck/action";
 import {createTableActions} from "../../../lib/table/index";
 import {MENU_FISH_EYE} from "../../../lib/constants/iconConstants";
 import {ROUTE_MEMORY_CREATE, ROUTE_MEMORY_VIEW} from "../../../lib/constants/RouteConstants";

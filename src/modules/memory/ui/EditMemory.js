@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import EditMemoryFeature from "../feature/EditMemoryFeature";
 import InputEditor from "../../../lib/forms/componentFactory/inputEditor/InputEditor";
 

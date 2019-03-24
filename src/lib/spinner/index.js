@@ -1,5 +1,5 @@
-import React from 'react';
-import { Dialog, CircularProgress, withStyles } from '@material-ui/core';
+import React from "react";
+import {CircularProgress, Dialog, withStyles} from "@material-ui/core";
 
 const initialProps = {
   open: false

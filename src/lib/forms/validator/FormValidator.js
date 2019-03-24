@@ -1,5 +1,5 @@
-import validator from 'validator';
-import { methodMap } from './FormMethods';
+import validator from "validator";
+import {methodMap} from "./FormMethods";
 
 export const validate = (props, state) => {
   const response = {

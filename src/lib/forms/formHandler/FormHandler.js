@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { validate } from '../validator/FormValidator';
-import { connect } from 'react-redux';
+import * as React from "react";
+import {validate} from "../validator/FormValidator";
+import {connect} from "react-redux";
 import Form from "../form/Form";
-import { Button } from '@material-ui/core';
+import {Button} from "@material-ui/core";
 
 class FormHandler extends React.Component {
   constructor(props) {

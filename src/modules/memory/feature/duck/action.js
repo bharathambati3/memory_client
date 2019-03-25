@@ -107,14 +107,15 @@ export const getMemory = (id) => apiRequest({
     feature: GET_MEMORY_ACTION,
     error: simpleError,
     success: (resp) => [
-        setData({
-            key: KEY_SELECTED_MEMORIES,
-            value: resp.data
-        }),
-        setData({
-            key: KEY_HEADER,
-            value: `${resp.data.topic.name} - ${resp.data.title}`
-        })
+        setData([
+            {
+                key: KEY_SELECTED_MEMORIES,
+                value: resp.data
+            },{
+                key: KEY_HEADER,
+                value: `${resp.data.topic.name} - ${resp.data.title}`
+            }
+        ])
     ]
 })
 
@@ -124,14 +125,15 @@ export const initializeEditMemory = (id) => apiRequest({
     feature: GET_MEMORY_ACTION,
     error: simpleError,
     success: (resp) => [
-        setData({
-            key: KEY_CURRENT_EDIT_MEMORY,
-            value: resp.data.content
-        }),
-        setData({
-            key: KEY_HEADER,
-            value: `Edit ${resp.data.topic.name} - ${resp.data.title}`
-        })
+        setData([
+            {
+                key: KEY_CURRENT_EDIT_MEMORY,
+                value: resp.data.content
+            },{
+                key: KEY_HEADER,
+                value: `Edit ${resp.data.topic.name} - ${resp.data.title}`
+            }
+        ]),
     ]
 })
 

@@ -10,8 +10,6 @@ class EditMemoryFeature extends React.Component {
 
     componentDidMount() {
         let id = this.props.match.params.id;
-        console.log(`cdm ${id}`)
-        this.id = id;
         this.props.initializeEditMemory(id);
     }
 
@@ -22,8 +20,8 @@ class EditMemoryFeature extends React.Component {
     getChildrenProps = () => {
         return {
             id: this.id,
-            loaded: this.props.id === this.id,
-            onSubmit: this.props.editMemoryApi,
+            loaded: this.props.id === this.props.match.params.id,
+            onSubmit: () => this.props.editMemoryApi(this.props.id, this.props.content),
             content: this.props.content,
             onChange: (data) => this.props.setData({
                 key: KEY_CURRENT_EDIT_MEMORY,

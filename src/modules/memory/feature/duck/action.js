@@ -1,15 +1,15 @@
 import {apiRequest, simpleError} from "../../../../lib/redux/actions/api";
 import {
-    ADD_MEMORY,
+    ADD_MEMORY, EDIT_MEMORY,
     GET_MEMORY,
     HTTP_GET,
-    HTTP_POST,
+    HTTP_POST, HTTP_PUT,
     LIST_MEMORIES,
     LIST_MEMORY_REVISED,
     LIST_REMEMBER_MEMORIES
 } from "../../../../lib/constants/NetworkConstants";
 import {
-    ADD_MEMORY_ACTION,
+    ADD_MEMORY_ACTION, EDIT_MEMORY_ACTION,
     GET_MEMORY_ACTION,
     LIST_MEMORY_ACTION,
     LIST_MEMORY_REVISED_ACTION,
@@ -25,7 +25,10 @@ import {
     KEY_SELECTED_MEMORIES
 } from "../../../../lib/constants/keys";
 import {routeAction} from "../../../../lib/redux/actions/historyAction";
-import {ROUTE_MEMORY_EDIT, ROUTE_MEMORY_REMEMBER_LIST} from "../../../../lib/constants/RouteConstants";
+import {
+    ROUTE_MEMORY_EDIT, ROUTE_MEMORY_LIST,
+    ROUTE_MEMORY_REMEMBER_LIST
+} from "../../../../lib/constants/RouteConstants";
 
 
 const convert = (req) => {
@@ -53,15 +56,22 @@ export const createMemoryApi = (formState) => apiRequest({
     }
 })
 
-export const editMemoryApi = (formState) => apiRequest({
-    body: convert(formState),
-    method: HTTP_POST,
-    url: ADD_MEMORY,
-    feature: ADD_MEMORY_ACTION,
+export const editMemoryApi = (id , content) => apiRequest({
+    body: JSON.stringify({
+        memoId: id,
+        content: JSON.stringify(content)
+    }),
+    method: HTTP_PUT,
+    url: EDIT_MEMORY,
+    feature: EDIT_MEMORY_ACTION,
     error: simpleError,
-    success: (resp) => {
-        formState.onReset();
-        return notify(`Successfully added ${JSON.stringify(resp)}`, 'success')
+    success: () => {
+        return [
+            routeAction({
+                url: ROUTE_MEMORY_LIST
+            }),
+            notify(`Successfully edited `, 'success')
+        ]
     }
 })
 

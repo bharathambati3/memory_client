@@ -67,6 +67,6 @@ export const createTopicApi = (formState) => apiRequest({
     error: simpleError,
     success: (resp) => {
         formState.onReset();
-        return notify(`Successfully added ${JSON.stringify(resp)}`, 'success')
+        return notify(`Successfully added new topic: ${resp.data.id}`, 'success')
     }
 })

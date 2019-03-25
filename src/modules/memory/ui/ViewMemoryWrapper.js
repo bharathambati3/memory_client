@@ -16,7 +16,6 @@ const ViewMemoryWrapper = props => {
             >
                 Edit
             </Button>
-            <InputEditorView memory={memory} onMarkAsRead={onMarkAsRead}/>
             <Button
                 style={{
                     margin: 10
@@ -28,6 +27,7 @@ const ViewMemoryWrapper = props => {
             >
                 Mark as read
             </Button>
+            <InputEditorView memory={memory} onMarkAsRead={onMarkAsRead}/>
         </div>
     );
 };

@@ -29,7 +29,7 @@ export const addCategoryApi = (formState) => {
         error: simpleError,
         success: (resp) => {
             formState.onReset();
-            return notify(`Successfully added ${JSON.stringify(resp)}`, 'success')
+            return notify(`Successfully added new category: ${resp.data.id}`, 'success')
         }
     })
 }

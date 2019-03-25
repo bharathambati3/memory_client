@@ -9,7 +9,6 @@ import {getIcon} from "../../../lib/icons/factory";
 const styles = {
     root: {
         bottom: 0,
-        position: 'fixed',
         width: '100%'
     },
 };

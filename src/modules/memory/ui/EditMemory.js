@@ -8,13 +8,13 @@ class EditMemory extends React.Component {
         return (
             <EditMemoryFeature>
                 {
-                    (props) => (
-                        <InputEditor
+                    (props) => {
+                        return (props.loaded) ? <InputEditor
                             key={props.id}
                             value={props.content}
                             onChange={props.onChange}
-                        />
-                    )
+                        /> : `Loading Memory!!`
+                    }
                 }
             </EditMemoryFeature>
         )

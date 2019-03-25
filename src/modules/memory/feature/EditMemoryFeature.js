@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {editMemoryApi, initializeEditMemory} from "./duck/action";
 import {extractor} from "../../../lib/utils/util";
-import {KEY_CURRENT_EDIT_MEMORY} from "../../../lib/constants/keys";
+import {KEY_CURRENT_EDIT_MEMORY, KEY_CURRENT_EDIT_MEMORY_ID} from "../../../lib/constants/keys";
 import {setData} from "../../../lib/redux/actions/manageData";
 
 class EditMemoryFeature extends React.Component {
@@ -22,6 +22,7 @@ class EditMemoryFeature extends React.Component {
     getChildrenProps = () => {
         return {
             id: this.id,
+            loaded: this.props.id === this.id,
             onSubmit: this.props.editMemoryApi,
             content: this.props.content,
             onChange: (data) => this.props.setData({
@@ -34,6 +35,7 @@ class EditMemoryFeature extends React.Component {
 
 const mapStateToProps = (state) => ({
     content: extractor(state, KEY_CURRENT_EDIT_MEMORY),
+    id: extractor(state, KEY_CURRENT_EDIT_MEMORY_ID),
 
 });
 

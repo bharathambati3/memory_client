@@ -18,7 +18,7 @@ import {
 import {notify} from "../../../../lib/redux/actions/notifications";
 import {setData} from "../../../../lib/redux/actions/manageData";
 import {
-    KEY_CURRENT_EDIT_MEMORY,
+    KEY_CURRENT_EDIT_MEMORY, KEY_CURRENT_EDIT_MEMORY_ID,
     KEY_HEADER,
     KEY_LIST_MEMORIES,
     KEY_LIST_REMEMBER_MEMORIES,
@@ -126,6 +126,10 @@ export const initializeEditMemory = (id) => apiRequest({
     error: simpleError,
     success: (resp) => [
         setData([
+            {
+                key: KEY_CURRENT_EDIT_MEMORY_ID,
+                value: id
+            },
             {
                 key: KEY_CURRENT_EDIT_MEMORY,
                 value: resp.data.content
